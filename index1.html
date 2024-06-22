@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+ 
+    <title>WEATHER APP</title>
+</head>
+<body background = "pexels-pixabay-76969.jpg">
+    <!--navbar  -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav_custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">WEATHER APP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ABOUT THIS APP
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">DELHI</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">SEATTLE</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">PUNJAB</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ">USAGE GUIDE</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <!-- search bar -->
+      <form class="d-flex search_custom" role="search">
+        <input class="form-control me-2 search_input_custom" id="city" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light search_btn_custom" id="submit_btn" type="submit">Search</button>
+      </form>
+      <!-- CARD COINTAINER -->
+      <div class="card_container">
+        <h1 class=" text-center main_heading" style="color:white">WEATHER OF <span id="cityname"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center card_row" style="opacity:0.8">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">TEMPERATURE</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="temp"></span><small class="text-body-secondary fw-light">&#8451</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      
+                      <!-- <li>TEMP : <span id="temp"></span></li> -->
+                      <li>FEELS LIKE : <span id="feels_like"></span></li>
+                      <li>MIN TEMP : <span id="min_temp"></span></li>
+                      <li>MAX TEMP : <span id="max_temp"></span></li>
+                      
+                    </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">WIND INFO</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-body-secondary fw-light">Km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>CLOUD PCT : <span id="cloud_pct"></span></li>
+                      <li>WIND SPEED : <span id="wind_speed"></span></li>
+                      <li>WIND DEGREES: <span id="wind_degrees"></span></li>
+                    </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <div class="card-header py-3 ">
+                    <h4 class="my-0 fw-normal">HUMIDITY INFO</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light">%</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>HUMIDITY: <span id="humidity"></span></li>
+                      <li>SUNRISE TIME: <span id="sunrise"></span></li>
+                      <li>SUNSET TIME: <span id="sunset"></span></li>
+                    </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+        
+            <!-- lower table -->
+            <h1 class=" text-center mb-5 mt-5 ">WEATHER WORLD WIDE</h1>
+
+            <!-- card columm -->
+            <div class="lower_container" style="opacity:0.8">
+              <div class="row row_custom">
+                <div class="col-sm-6 mb-3 mb-sm-0  ">
+                  <div class="card ">
+                    <div class="card-body card_body_custom">
+
+                      <div class="card_custom" >
+                        <div class="card-header text-center lower_card_header">
+                          AMERICA
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item text-center" id="temp1">TEMP : </li>
+                          <li class="list-group-item text-center" id="feels_like1">FEELS LIKE : </li>
+                          <li class="list-group-item text-center" id="max_temp1" >MAX-TEMP : </li>
+                          <li class="list-group-item text-center" id="min_temp1">MIN-TEMP : </li>
+                          <li class="list-group-item text-center" id="humidity3">HUMIDITY : </li>
+                          <li class="list-group-item text-center" id="wind_speed3">WIND SPEED : </li>
+                        </ul>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6  ">
+                  <div class="card">
+                    <div class="card-body card_body_custom">
+
+                      <div class="card_custom" >
+                        <div class="card-header text-center lower_card_header">
+                          RUSSIA
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item text-center" id="temp2">TEMP : </li>
+                          <li class="list-group-item text-center" id="feels_like2">FEELS LIKE : </li>
+                          <li class="list-group-item text-center" id="max_temp2" >MAX-TEMP : </li>
+                          <li class="list-group-item text-center" id="min_temp2">MIN-TEMP : </li>
+                          <li class="list-group-item text-center" id="humidity4">HUMIDITY : </li>
+                          <li class="list-group-item text-center" id="wind_speed4">WIND SPEED : </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <div style="height:100vh;"></div>
+    <!-- normal js -->
+    <script src="script.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+   <div class="other">
+    <strong><u>OTHER PROJECT LINK</u></strong>
+  </div>
+   <div class="other1">
+    <ul>
+      <li>
+        <a href="https://public.tableau.com/app/profile/adarsh.singh2584/viz/Amazonprimedashboard_16872891358910/Dashboard1">AMAZON PRIME VIDEO DASHBOARD</a>
+      </li>
+      <li><a href="https://public.tableau.com/views/Staru/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link">NETFLIX DASHBOARD</a></a></li>
+      </ul>
+   </div>
+    </body>
+</html>
